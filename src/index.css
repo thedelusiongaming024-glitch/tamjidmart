@@ -1,0 +1,19 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+@layer base{
+ html{scroll-behavior:smooth}
+ body{@apply bg-porcelain text-ink font-sans antialiased min-h-screen}
+ body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(620px 420px at 8% 0,#cfe6dbcc,transparent),radial-gradient(700px 500px at 100% 25%,#efe0c2b3,transparent),radial-gradient(600px 500px at 25% 100%,#dfe3f1b3,transparent)}
+ h1,h2,h3{@apply font-serif font-normal tracking-tight leading-[1.05]}
+ :focus-visible{@apply outline outline-2 outline-offset-2 outline-acc}
+}
+@layer components{
+ .glass{@apply bg-white/60 backdrop-blur-xl backdrop-saturate-150 border border-white/80 shadow-glass}
+ .btn{@apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-2xl font-semibold bg-acc text-white border border-transparent transition hover:bg-acc-dark hover:-translate-y-px disabled:opacity-60}
+ .btn-ghost{@apply bg-white/70 text-ink border-white/80 hover:bg-white}
+ .btn-sm{@apply px-3.5 py-2 text-[13px] rounded-xl}
+ .input{@apply w-full px-3.5 py-2.5 rounded-xl border border-black/10 bg-white/80 outline-none focus:ring-2 focus:ring-acc/40}
+ .pill{@apply px-2.5 py-0.5 rounded-full text-xs font-semibold bg-acc/15 text-acc}.pill.off{@apply bg-black/5 text-mut}
+ .panel{@apply glass rounded-3xl p-5 mb-5 overflow-auto}
+ .tbl{@apply w-full text-left min-w-[560px]}.tbl th{@apply text-xs text-mut p-2.5 font-semibold}.tbl td{@apply p-2.5 border-t border-black/5 align-middle}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
